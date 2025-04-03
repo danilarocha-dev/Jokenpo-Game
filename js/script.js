@@ -7,7 +7,7 @@ function iniciarJogo() {
   // Oculta o botão "Bora Jogar!"
   botaoBoraJogar.classList.add("hidden");
 
-  // Limpa o conteúdo inicial
+  // Exibe a pergunta sobre a idade
   conteudoDiv.innerHTML = `
     <p>Quantos anos você tem?</p>
     <input type="number" id="idade" placeholder="Digite sua idade">
@@ -90,13 +90,13 @@ function jogarJokenpo(escolhaJogador) {
     (escolhaJogador === 1 && escolhaComputador === 3) || // Pedra vence Tesoura
     (escolhaJogador === 2 && escolhaComputador === 1) || // Papel vence Pedra
     (escolhaJogador === 3 && escolhaComputador === 2)    // Tesoura vence Papel
-  ) {
+   ) {
     mensagemResultado = "🎉 Você venceu!";
   } else {
     mensagemResultado = "💻 O computador venceu!";
   }
 
-  // Exibe o resultado na div
+  // Exibe o resultado
   conteudoDiv.innerHTML = `
     <p>Você escolheu: <strong>${escolhaJogadorTexto}</strong></p>
     <p>O computador escolheu: <strong>${escolhaComputadorTexto}</strong></p>
@@ -107,6 +107,11 @@ function jogarJokenpo(escolhaJogador) {
 }
 
 function reiniciarJogo() {
+  const botaoBoraJogar = document.getElementById("bora-jogar");
   const conteudoDiv = document.getElementById("conteudo");
+
+  //Limpa o conteúdo e exive o botão "bora jogar!" novamente
   conteudoDiv.innerHTML = "";
+  botaoBoraJogar.classList.remove("hidden");
+
 };
