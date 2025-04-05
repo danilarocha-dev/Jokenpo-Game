@@ -36,7 +36,11 @@ function confirmarIdade() {
   }
 
   if (idade < 18) {
-    conteudoDiv.innerHTML = `<p>⚠️ Você não tem permissão para jogar Jokenpo.</p>`;
+    conteudoDiv.innerHTML = `<p>⚠️ Você não tem permissão para jogar Jokenpo.</p>
+    <button id="voltar-inicio">Voltar ao início</button>`;
+
+    // Reexibe o totão "Bora Jogar!" ao clicar no botão "Voltar ao início"
+    document.getElementById("voltar-inicio").addEventListener("click", reiniciarJogo);
     return;
   }
 
